@@ -7,7 +7,7 @@
  * @author Sandor Takacs
  * original author: Tim Gerundt
  */
-class bugheader extends rcube_plugin
+class rc_bugheader extends rcube_plugin
 {
     public $task = 'mail';
 
