@@ -77,7 +77,6 @@ class rc_bugheader extends rcube_plugin
         }
 
         $message_id = $p['headers']->messageID;
-        # <jvehent/dkimstatus/pull/4@github.com>
         if (preg_match('#<(\w+)/(\w+)/pull/(\w+)@github\.com>#i', $message_id, $matches)) {
             // If GitHub Pull request
             $title = 'GitHub Pull';
