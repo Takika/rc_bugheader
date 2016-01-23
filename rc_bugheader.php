@@ -87,7 +87,7 @@ class rc_bugheader extends rcube_plugin
             //if bug header found...
             $p['output'][$key] = array(
                 'title' => $title,
-                'value' => $value
+                'value' => $value,
                 'html'  => true
             );
         }
