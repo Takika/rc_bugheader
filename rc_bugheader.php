@@ -85,7 +85,11 @@ class rc_bugheader extends rcube_plugin
 
         if (!empty($title) && !empty($value)) {
             //if bug header found...
-            $p['output'][$key] = array('title' => $title, 'value' => $value);
+            $p['output'][$key] = array(
+                'title' => $title,
+                'value' => $value
+                'html'  => true
+            );
         }
 
         return $p;
