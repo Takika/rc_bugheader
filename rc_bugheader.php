@@ -49,10 +49,10 @@ class rc_bugheader extends rcube_plugin
             $tracTicketUrl = $p['headers']->others['x-trac-ticket-url'];
             if (!empty($tracTicketUrl)) {
                 // If has a Trac Ticket URL
-                $value = '<a href="' . Q($tracTicketUrl) . '" target="_blank">' . Q($tracTicketId) . '</a>';
+                $value = '<a href="' . rcube::Q($tracTicketUrl) . '" target="_blank">' . rcube::Q($tracTicketId) . '</a>';
             } else {
                 //If NOT has ticket URL
-                $value = Q($tracTicketId);
+                $value = rcube::Q($tracTicketId);
             }
         }
 
@@ -60,27 +60,27 @@ class rc_bugheader extends rcube_plugin
         if (!empty($sfTrackerItemId)) {
             // If SourceForge tracker item
             $title = 'Tracker ID';
-            $value = '<a href="http://sourceforge.net/support/tracker.php?aid=' . Q($sfTrackerItemId) . '" target="_blank">' . Q($sfTrackerItemId) . '</a>';
+            $value = '<a href="http://sourceforge.net/support/tracker.php?aid=' . rcube::Q($sfTrackerItemId) . '" target="_blank">' . rcube::Q($sfTrackerItemId) . '</a>';
         }
 
         $references = $p['headers']->references;
         if (preg_match('#<(\w+)/(\w+)/commit/(\w+)@github\.com>#i', $references, $matches)) {
             // If GitHub Commit
             $title = 'GitHub Commit';
-            $value = '<a href="https://github.com/' . Q($matches[1]) . '/' . Q($matches[2]) . '/commit/' . Q($matches[3]) . '" target="_blank">' . Q($matches[3]) . '</a>';
+            $value = '<a href="https://github.com/' . rcube::Q($matches[1]) . '/' . rcube::Q($matches[2]) . '/commit/' . rcube::Q($matches[3]) . '" target="_blank">' . rcube::Q($matches[3]) . '</a>';
         }
 
         if (preg_match('#<(\w+)/(\w+)/issues/(\w+)@github\.com>#i', $references, $matches)) {
             // If GitHub Issue
             $title = 'GitHub Issue';
-            $value = '<a href="https://github.com/' . Q($matches[1]) . '/' . Q($matches[2]) . '/issues/' . Q($matches[3]) . '" target="_blank">' . Q($matches[3]) . '</a>';
+            $value = '<a href="https://github.com/' . rcube::Q($matches[1]) . '/' . rcube::Q($matches[2]) . '/issues/' . rcube::Q($matches[3]) . '" target="_blank">' . rcube::Q($matches[3]) . '</a>';
         }
 
         $message_id = $p['headers']->messageID;
         if (preg_match('#<(\w+)/(\w+)/pull/(\w+)@github\.com>#i', $message_id, $matches)) {
             // If GitHub Pull request
             $title = 'GitHub Pull';
-            $value = '<a href="https://github.com/' . Q($matches[1]) . '/' . Q($matches[2]) . '/pull/' . Q($matches[3]) . '" target="_blank">' . Q($matches[3]) . '</a>';
+            $value = '<a href="https://github.com/' . rcube::Q($matches[1]) . '/' . rcube::Q($matches[2]) . '/pull/' . rcube::Q($matches[3]) . '" target="_blank">' . rcube::Q($matches[3]) . '</a>';
         }
 
         if (!empty($title) && !empty($value)) {
