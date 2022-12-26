@@ -31,7 +31,8 @@ class rc_bugheader extends rcube_plugin
 
     function storage_init($p)
     {
-        $p['fetch_headers'] = trim($p['fetch_headers'] . ' ' . strtoupper(join(' ', $this->_bugMailHeaders)));
+        $new_headers = trim(strtoupper(join(' ', $this->_bugMailHeaders)));
+        $p['fetch_headers'] = isset($p['fetch_headers']) ? trim($p['fetch_headers'] . ' ' . $new_headers) : $new_headers;
 
         return $p;
     }
