@@ -3,7 +3,7 @@
     "type": "roundcube-plugin",
     "description": "Bugheader plugin for Roundcube webmail",
     "homepage": "https://github.com/Takika/rc_bugheader",
-    "license": "AGPLv3",
+    "license": "AGPL-3.0-or-later",
     "authors": [
         {
             "name": "Sandor Takacs",
