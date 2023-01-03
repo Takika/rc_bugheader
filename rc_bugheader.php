@@ -3,7 +3,6 @@
 /*
  * Show additional informations from bugtracker mails
  *
- * @version 0.2
  * @author Sandor Takacs
  * original author: Tim Gerundt
  */
@@ -92,7 +91,7 @@ class rc_bugheader extends rcube_plugin
 
         if (!empty($title) && !empty($value)) {
             //if bug header found...
-            $p['output'][$key] = [
+            $p['output']['BugTracker'] = [
                 'title' => $title,
                 'value' => $value,
                 'html'  => true
@@ -101,5 +100,6 @@ class rc_bugheader extends rcube_plugin
 
         return $p;
     }
+
 }
 ?>
